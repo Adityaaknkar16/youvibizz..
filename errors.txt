@@ -1,0 +1,120 @@
+
+--- AddDistributor.vue ---
+  Line 50 : Element is missing end tag.
+  Line 67 : Invalid end tag.
+  Line 68 : Invalid end tag.
+  Line 69 : Invalid end tag.
+  Line 70 : Invalid end tag.
+  Line 71 : Invalid end tag.
+  Line 72 : Invalid end tag.
+  Line 73 : Invalid end tag.
+  Line 74 : Invalid end tag.
+  Line 75 : Invalid end tag.
+  Line 76 : Invalid end tag.
+
+--- AddJob2.vue ---
+  Line 78 : Element is missing end tag.
+  Line 123 : Invalid end tag.
+
+--- ManufacturerDashboard.vue ---
+  Line 37 : Element is missing end tag.
+  Line 62 : Element is missing end tag.
+  Line 110 : Invalid end tag.
+  Line 111 : Invalid end tag.
+  Line 112 : Invalid end tag.
+  Line 113 : Invalid end tag.
+  Line 114 : Invalid end tag.
+  Line 115 : Invalid end tag.
+
+--- ManufacturerProfile.vue ---
+  Line 46 : Element is missing end tag.
+  Line 81 : Invalid end tag.
+
+--- ManufacturerProfileEdit.vue ---
+  Line 190 : Element is missing end tag.
+  Line 206 : Invalid end tag.
+  Line 207 : Invalid end tag.
+  Line 208 : Invalid end tag.
+  Line 209 : Invalid end tag.
+  Line 210 : Invalid end tag.
+  Line 211 : Invalid end tag.
+  Line 212 : Invalid end tag.
+  Line 213 : Invalid end tag.
+  Line 214 : Invalid end tag.
+  Line 215 : Invalid end tag.
+  Line 216 : Invalid end tag.
+  Line 217 : Invalid end tag.
+  Line 218 : Invalid end tag.
+  Line 219 : Invalid end tag.
+  Line 220 : Invalid end tag.
+  Line 221 : Invalid end tag.
+  Line 222 : Invalid end tag.
+  Line 223 : Invalid end tag.
+  Line 224 : Invalid end tag.
+  Line 225 : Invalid end tag.
+  Line 226 : Invalid end tag.
+  Line 227 : Invalid end tag.
+  Line 228 : Invalid end tag.
+  Line 229 : Invalid end tag.
+  Line 230 : Invalid end tag.
+  Line 231 : Invalid end tag.
+  Line 232 : Invalid end tag.
+  Line 233 : Invalid end tag.
+  Line 234 : Invalid end tag.
+  Line 235 : Invalid end tag.
+  Line 236 : Invalid end tag.
+  Line 237 : Invalid end tag.
+  Line 238 : Invalid end tag.
+  Line 239 : Invalid end tag.
+
+--- ManufacturerSettings.vue ---
+  Line 85 : Element is missing end tag.
+  Line 93 : Element is missing end tag.
+  Line 101 : Element is missing end tag.
+  Line 186 : Invalid end tag.
+  Line 187 : Invalid end tag.
+  Line 188 : Invalid end tag.
+  Line 189 : Invalid end tag.
+  Line 190 : Invalid end tag.
+  Line 191 : Invalid end tag.
+  Line 192 : Invalid end tag.
+  Line 193 : Invalid end tag.
+  Line 194 : Invalid end tag.
+  Line 195 : Invalid end tag.
+  Line 196 : Invalid end tag.
+  Line 197 : Invalid end tag.
+  Line 198 : Invalid end tag.
+  Line 199 : Invalid end tag.
+  Line 200 : Invalid end tag.
+
+--- ManufacturerTransactions.vue ---
+  Line 65 : Element is missing end tag.
+  Line 137 : Invalid end tag.
+  Line 138 : Invalid end tag.
+  Line 139 : Invalid end tag.
+  Line 140 : Invalid end tag.
+  Line 141 : Invalid end tag.
+  Line 142 : Invalid end tag.
+
+--- ProductPortfolio.vue ---
+  Line 27 : Element is missing end tag.
+  Line 61 : Invalid end tag.
+  Line 62 : Invalid end tag.
+
+--- ProductProfile2.vue ---
+  Line 25 : Element is missing end tag.
+  Line 52 : Invalid end tag.
+
+--- RetailerDashboard.vue ---
+  Line 34 : Element is missing end tag.
+  Line 89 : Invalid end tag.
+
+--- RetailerProfile.vue ---
+  Line 56 : Element is missing end tag.
+  Line 132 : Invalid end tag.
+
+--- RouteDirectory.vue ---
+  Line 29 : Element is missing end tag.
+  Line 45 : Invalid end tag.
+  Line 46 : Invalid end tag.
+  Line 47 : Invalid end tag.

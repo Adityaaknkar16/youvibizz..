@@ -1,0 +1,76 @@
+﻿Fixed: imported\adityavuetask\src\components\DistributionAreas.vue
+Fixed: imported\adityavuetask\src\components\DistributorDashboard.vue
+Fixed: imported\adityavuetask\src\components\DistributorEnquiries.vue
+Fixed: imported\adityavuetask\src\components\DistributorJobs.vue
+Fixed: imported\adityavuetask\src\components\DistributorMessages.vue
+Fixed: imported\adityavuetask\src\components\DistributorNetwork.vue
+Fixed: imported\adityavuetask\src\components\DistributorProducts.vue
+Fixed: imported\adityavuetask\src\components\DistributorProfile.vue
+Fixed: imported\adityavuetask\src\components\DistributorProfileEdit.vue
+Fixed: imported\adityavuetask\src\components\DistributorRequirements.vue
+Fixed: imported\adityavuetask\src\components\DistributorSettings.vue
+Fixed: imported\adityavuetask\src\components\DistributorTransactions.vue
+Fixed: imported\HTML FILES VUE\About.vue
+Fixed: imported\HTML FILES VUE\add_coverage_area.vue
+Fixed: imported\HTML FILES VUE\add_product.vue
+Fixed: imported\HTML FILES VUE\affiliate-program.vue
+Fixed: imported\HTML FILES VUE\cash-on-delivery.vue
+Fixed: imported\HTML FILES VUE\comments.vue
+Fixed: imported\HTML FILES VUE\coupons.vue
+Fixed: imported\HTML FILES VUE\distributor-client-networks.vue
+Fixed: imported\HTML FILES VUE\enquiry-view.vue
+Fixed: imported\HTML FILES VUE\payments.vue
+Fixed: imported\HTML FILES VUE\retailer-client-networks.vue
+Fixed: imported\Purva\vue-project\src\pages-converted\add-branch.vue
+Fixed: imported\Purva\vue-project\src\pages-converted\add-distribution-area.vue
+Fixed: imported\Purva\vue-project\src\pages-converted\add-network-area.vue
+Fixed: imported\Purva\vue-project\src\pages-converted\branches.vue
+Fixed: imported\Purva\vue-project\src\pages-converted\business-network-areas.vue
+Fixed: imported\Purva\vue-project\src\pages-converted\careers.vue
+Fixed: imported\Purva\vue-project\src\pages-converted\client-networks-add-edit.vue
+Fixed: imported\Purva\vue-project\src\pages-converted\contact.vue
+Fixed: imported\Purva\vue-project\src\pages-converted\distribution-areas.vue
+Fixed: imported\Purva\vue-project\src\pages-converted\distributor_support.vue
+Fixed: imported\Tanaya\youvbiz-app\src\pages\Branches.vue
+Fixed: imported\Tanaya\youvbiz-app\src\pages\ClientNetworks.vue
+Fixed: imported\Tanaya\youvbiz-app\src\pages\DistributionAreas.vue
+Fixed: imported\Tanaya\youvbiz-app\src\pages\DistributorDetail.vue
+Fixed: imported\Tanaya\youvbiz-app\src\pages\DistributorJobs.vue
+Fixed: imported\Tanaya\youvbiz-app\src\pages\DistributorRequirements.vue
+Fixed: imported\Tanaya\youvbiz-app\src\pages\DistributorSettings.vue
+Fixed: imported\Tanaya\youvbiz-app\src\pages\ManufacturerEnquiries.vue
+Fixed: imported\Tanaya\youvbiz-app\src\pages\MembershipPlan.vue
+Fixed: imported\Tanaya\youvbiz-app\src\pages\RetailerEnquiries.vue
+Fixed: imported\Tanaya\youvbiz-app\src\pages\RetailerJobs.vue
+Fixed: imported\Tanaya\youvbiz-app\src\pages\RetailerRequirements.vue
+Fixed: imported\Tanaya\youvbiz-app\src\pages\RetailerTransactions.vue
+Fixed: imported\Task\src\components\About.vue
+Fixed: imported\Task\src\components\add_coverage_area.vue
+Fixed: imported\Task\src\components\add_product.vue
+Fixed: imported\Task\src\components\affiliate-program.vue
+Fixed: imported\Task\src\components\cash-on-delivery.vue
+Fixed: imported\Task\src\components\comments.vue
+Fixed: imported\Task\src\components\coupons.vue
+Fixed: imported\Task\src\components\distributor-client-networks.vue
+Fixed: imported\Task\src\components\enquiry-reply.vue
+Fixed: imported\Task\src\components\enquiry-view.vue
+Fixed: imported\Task\src\components\home.vue
+Fixed: imported\Task\src\components\index.vue
+Fixed: imported\Task\src\components\jobs-applicants.vue
+Fixed: imported\Task\src\components\job_post.vue
+Fixed: imported\Task\src\components\Listing.vue
+Fixed: imported\Task\src\components\manufacturer-certificates.vue
+Fixed: imported\Task\src\components\manufacturer-client-networks.vue
+Fixed: imported\Task\src\components\manufacturer-dashboard.vue
+Fixed: imported\Task\src\components\manufacturer-edit.vue
+Fixed: imported\Task\src\components\manufacturer-gallery.vue
+Fixed: imported\Task\src\components\manufacturer-jobs.vue
+Fixed: imported\Task\src\components\manufacturer_detail.vue
+Fixed: imported\Task\src\components\payments.vue
+Fixed: imported\Task\src\components\retailer-client-networks.vue
+Fixed: views\EnquiryView.vue
+Fixed: views\ProductProfile2.vue
+Fixed: views\RetailerClientNetworks.vue
+Fixed: views\RetailerMessages.vue
+
+Done. Fixed 74 files.

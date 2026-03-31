@@ -1,0 +1,14 @@
+﻿
+> vuetask@0.0.0 build
+> vite build
+
+[36mvite v8.0.3 [32mbuilding client environment for production...[36m[39m
+[2K
+transforming...✓ 100 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.45 kB │ gzip:  0.29 kB
+dist/assets/index-M6YdmgfT.css   41.96 kB │ gzip:  8.12 kB
+dist/assets/index-BF46vWsx.js   309.61 kB │ gzip: 87.66 kB
+
+[32m✓ built in 1.51s[39m

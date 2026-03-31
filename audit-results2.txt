@@ -1,0 +1,11 @@
+﻿
+layouts\AppLayout.vue
+  - has nested .app div
+
+views\ProductPortfolio.vue
+  - min-width > 300px
+
+views\RouteDirectory.vue
+  - fixed width >= 400px
+
+Total files with issues: 3

@@ -1,0 +1,236 @@
+﻿
+imported\adityavuetask\src\components\DistributionAreas.vue
+  - has nested .app div
+
+imported\adityavuetask\src\components\DistributorDashboard.vue
+  - has nested .app div
+
+imported\adityavuetask\src\components\DistributorEnquiries.vue
+  - has nested .app div
+
+imported\adityavuetask\src\components\DistributorJobs.vue
+  - has nested .app div
+
+imported\adityavuetask\src\components\DistributorMessages.vue
+  - has nested .app div
+
+imported\adityavuetask\src\components\DistributorNetwork.vue
+  - has nested .app div
+
+imported\adityavuetask\src\components\DistributorProducts.vue
+  - has nested .app div
+
+imported\adityavuetask\src\components\DistributorProfile.vue
+  - has nested .app div
+
+imported\adityavuetask\src\components\DistributorProfileEdit.vue
+  - has nested .app div
+
+imported\adityavuetask\src\components\DistributorRequirements.vue
+  - has nested .app div
+
+imported\adityavuetask\src\components\DistributorSettings.vue
+  - has nested .app div
+
+imported\adityavuetask\src\components\DistributorTransactions.vue
+  - has nested .app div
+
+imported\HTML FILES VUE\About.vue
+  - has nested .app div
+
+imported\HTML FILES VUE\add_coverage_area.vue
+  - has nested .app div
+
+imported\HTML FILES VUE\add_product.vue
+  - has nested .app div
+
+imported\HTML FILES VUE\affiliate-program.vue
+  - has nested .app div
+
+imported\HTML FILES VUE\cash-on-delivery.vue
+  - has nested .app div
+
+imported\HTML FILES VUE\comments.vue
+  - has nested .app div
+
+imported\HTML FILES VUE\coupons.vue
+  - has nested .app div
+
+imported\HTML FILES VUE\distributor-client-networks.vue
+  - has nested .app div
+
+imported\HTML FILES VUE\enquiry-view.vue
+  - has nested .app div
+
+imported\HTML FILES VUE\payments.vue
+  - has nested .app div
+
+imported\HTML FILES VUE\retailer-client-networks.vue
+  - has nested .app div
+
+imported\Purva\vue-project\src\pages-converted\add-branch.vue
+  - has nested .app div
+
+imported\Purva\vue-project\src\pages-converted\add-distribution-area.vue
+  - has nested .app div
+
+imported\Purva\vue-project\src\pages-converted\add-network-area.vue
+  - has nested .app div
+
+imported\Purva\vue-project\src\pages-converted\branches.vue
+  - has nested .app div
+
+imported\Purva\vue-project\src\pages-converted\business-network-areas.vue
+  - has nested .app div
+
+imported\Purva\vue-project\src\pages-converted\careers.vue
+  - has nested .app div
+
+imported\Purva\vue-project\src\pages-converted\client-networks-add-edit.vue
+  - has nested .app div
+
+imported\Purva\vue-project\src\pages-converted\contact.vue
+  - has nested .app div
+
+imported\Purva\vue-project\src\pages-converted\distribution-areas.vue
+  - has nested .app div
+
+imported\Purva\vue-project\src\pages-converted\distributor_support.vue
+  - has nested .app div
+
+imported\Tanaya\youvbiz-app\src\pages\Branches.vue
+  - has nested .app div
+
+imported\Tanaya\youvbiz-app\src\pages\ClientNetworks.vue
+  - has nested .app div
+
+imported\Tanaya\youvbiz-app\src\pages\DistributionAreas.vue
+  - has nested .app div
+
+imported\Tanaya\youvbiz-app\src\pages\DistributorDetail.vue
+  - has nested .app div
+
+imported\Tanaya\youvbiz-app\src\pages\DistributorJobs.vue
+  - has nested .app div
+
+imported\Tanaya\youvbiz-app\src\pages\DistributorRequirements.vue
+  - has nested .app div
+
+imported\Tanaya\youvbiz-app\src\pages\DistributorSettings.vue
+  - has nested .app div
+
+imported\Tanaya\youvbiz-app\src\pages\ManufacturerEnquiries.vue
+  - has nested .app div
+
+imported\Tanaya\youvbiz-app\src\pages\MembershipPlan.vue
+  - has nested .app div
+
+imported\Tanaya\youvbiz-app\src\pages\RetailerEnquiries.vue
+  - has nested .app div
+
+imported\Tanaya\youvbiz-app\src\pages\RetailerJobs.vue
+  - has nested .app div
+
+imported\Tanaya\youvbiz-app\src\pages\RetailerRequirements.vue
+  - has nested .app div
+
+imported\Tanaya\youvbiz-app\src\pages\RetailerTransactions.vue
+  - has nested .app div
+
+imported\Task\src\components\About.vue
+  - has nested .app div
+
+imported\Task\src\components\add_coverage_area.vue
+  - has nested .app div
+
+imported\Task\src\components\add_product.vue
+  - has nested .app div
+
+imported\Task\src\components\affiliate-program.vue
+  - has nested .app div
+
+imported\Task\src\components\cash-on-delivery.vue
+  - has nested .app div
+
+imported\Task\src\components\comments.vue
+  - has nested .app div
+
+imported\Task\src\components\coupons.vue
+  - has nested .app div
+
+imported\Task\src\components\distributor-client-networks.vue
+  - has nested .app div
+
+imported\Task\src\components\enquiry-reply.vue
+  - has nested .app div
+
+imported\Task\src\components\enquiry-view.vue
+  - has nested .app div
+
+imported\Task\src\components\home.vue
+  - has nested .app div
+
+imported\Task\src\components\index.vue
+  - has nested .app div
+
+imported\Task\src\components\jobs-applicants.vue
+  - has nested .app div
+
+imported\Task\src\components\job_post.vue
+  - has nested .app div
+
+imported\Task\src\components\Listing.vue
+  - has nested .app div
+
+imported\Task\src\components\manufacturer-certificates.vue
+  - has nested .app div
+
+imported\Task\src\components\manufacturer-client-networks.vue
+  - has nested .app div
+
+imported\Task\src\components\manufacturer-dashboard.vue
+  - has nested .app div
+
+imported\Task\src\components\manufacturer-edit.vue
+  - has nested .app div
+
+imported\Task\src\components\manufacturer-gallery.vue
+  - has nested .app div
+
+imported\Task\src\components\manufacturer-jobs.vue
+  - has nested .app div
+
+imported\Task\src\components\manufacturer_detail.vue
+  - has nested .app div
+
+imported\Task\src\components\payments.vue
+  - has nested .app div
+
+imported\Task\src\components\retailer-client-networks.vue
+  - has nested .app div
+
+layouts\AppLayout.vue
+  - has nested .app div
+
+views\EnquiryView.vue
+  - min-width > 300px
+  - fixed width >= 400px
+
+views\ProductPortfolio.vue
+  - min-width > 300px
+
+views\ProductProfile2.vue
+  - min-width > 300px
+  - fixed width >= 400px
+
+views\RetailerClientNetworks.vue
+  - min-width > 300px
+  - fixed width >= 400px
+
+views\RetailerMessages.vue
+  - has nested .app div
+
+views\RouteDirectory.vue
+  - fixed width >= 400px
+
+Total files with issues: 77
