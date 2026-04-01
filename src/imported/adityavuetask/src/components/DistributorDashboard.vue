@@ -37,17 +37,16 @@
           <p class="sec-label">Quick Actions</p>
           <div class="quick-actions">
             <router-link to="/distributor/dashboard" class="qa-btn"><div class="qa-ico" style="background:#f1f5f9;color:#475569;">🏠</div> Dashboard</router-link>
-            <router-link to="/distributor_detail" class="qa-btn"><div class="qa-ico" style="background:#e8f4fe;color:#2563eb;">🏢</div> Company Portfolio (20%)</router-link>
-            <router-link to="/distributor-products" class="qa-btn"><div class="qa-ico" style="background:#f3e8ff;color:#9333ea;">🛍️</div> Product Portfolio</router-link>
+            <router-link to="/distributor_detail" class="qa-btn"><div class="qa-ico" style="background:#e8f4fe;color:#2563eb;">🏢</div> Portfolio</router-link>
+            <router-link to="/distributor-products" class="qa-btn"><div class="qa-ico" style="background:#f3e8ff;color:#9333ea;">🛍️</div> Products</router-link>
             <router-link to="/branches" class="qa-btn"><div class="qa-ico" style="background:#e0f2fe;color:#0369a1;">🏢</div> Branches</router-link>
-            <router-link to="/business-network-areas" class="qa-btn"><div class="qa-ico" style="background:#f0fdf4;color:#15803d;">🏢</div> Business Network Areas</router-link>
+            <router-link to="/business-network-areas" class="qa-btn"><div class="qa-ico" style="background:#f0fdf4;color:#15803d;">🏢</div> Network Areas</router-link>
             <router-link to="/client-networks-add-edit" class="qa-btn"><div class="qa-ico" style="background:#ede9fe;color:#7c3aed;">🤝</div> Client Networks</router-link>
             <router-link to="/enquiry-received" class="qa-btn"><div class="qa-ico" style="background:#e8faf0;color:#16a34a;">📩</div> All Enquiries</router-link>
-            <router-link to="/interested-products" class="qa-btn"><div class="qa-ico" style="background:#fffbeb;color:#d97706;">🛍️</div> Interested Products</router-link>
-            <router-link to="/enquiry-received" class="qa-btn"><div class="qa-ico" style="background:#e8faf0;color:#16a34a;">📩</div> Enquiry Received</router-link>
+            <router-link to="/interested-products" class="qa-btn"><div class="qa-ico" style="background:#fffbeb;color:#d97706;">🛍️</div> Interested</router-link>
             <router-link to="/manufacturer-gallery" class="qa-btn"><div class="qa-ico" style="background:#e8f4fe;color:#2563eb;">🖼️</div> Gallery</router-link>
             <router-link to="/distributor-jobs" class="qa-btn"><div class="qa-ico" style="background:#fee2e2;color:#dc2626;">💼</div> Job Posted</router-link>
-            <router-link to="/membership-plan" class="qa-btn"><div class="qa-ico" style="background:#f3e8ff;color:#9333ea;">⭐</div> Membership Plan</router-link>
+            <router-link to="/membership-plan" class="qa-btn"><div class="qa-ico" style="background:#f3e8ff;color:#9333ea;">⭐</div> Membership</router-link>
           </div>
 
           <div class="sec-header mt-8"><h3>Latest Enquiries</h3><router-link to="/enquiry-received" class="view-all-btn">View All</router-link></div>
@@ -78,24 +77,14 @@
             </div>
             <div style="height:6px;background:#d1fae5;border-radius:4px;overflow:hidden;"><div :style="{ width: profileStrength + '%', height: '100%', background: 'var(--teal)', borderRadius: '4px' }"></div></div>
             <p style="font-size:12px;color:var(--muted);margin-top:8px;">Add coverage areas and products to improve visibility.</p>
-            <router-link to="/add_coverage_area" style="display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:var(--teal);">Add Coverage Area →</router-link>
-          </div>
+          <router-link to="/pages/purva/add-distribution-area" style="display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:var(--teal);">Add Coverage Area →</router-link>
         </div>
       </div>
       
-      <nav class="bottom-nav">
-        <router-link to="/distributor/dashboard" class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</router-link>
-        <router-link to="/distributor-products" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>Products</router-link>
-        <router-link to="/enquiry-received" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Enquiries</router-link>
-        <router-link to="/membership-plan" class="nav-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Membership
-        </router-link>
-        <router-link to="/distributor_detail" class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profile</router-link>
-      </nav>
-
       <div class="toast" v-if="toast.show">{{ toast.message }}</div>
     </div>
   </div>
+</div>
 </template>
 
 <script setup>

@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { externalRoutes } from './generated-routes.js'
 
 import Home from '../views/Home.vue'
 import Register from '../views/Register.vue'
@@ -42,7 +43,16 @@ const routes = [
   { path: '/listing', redirect: '/pages/task/listing' },
   { path: '/careers', redirect: '/pages/purva/careers' },
 
-  { path: '/:pathMatch(.*)*', redirect: '/' },
+  // Include generated external routes
+  ...externalRoutes,
+
+  { 
+    path: '/:pathMatch(.*)*', 
+    redirect: () => {
+      const role = localStorage.getItem('yb_role') || localStorage.getItem('role')
+      return role ? '/home' : '/'
+    }
+  },
 ]
 
 const router = createRouter({

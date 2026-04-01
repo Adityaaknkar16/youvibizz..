@@ -239,6 +239,12 @@ const doLogin = (role) => {
 
 // Check URL query parameters securely on mount
 onMounted(() => {
+  // If already logged in, go to home (which will route to dashboard)
+  if (localStorage.getItem('yb_role') || localStorage.getItem('role')) {
+    router.push('/home')
+    return
+  }
+
   const qRole = route.query.role
   if (qRole && rolesMap[qRole]) {
     activeRole.value = qRole
