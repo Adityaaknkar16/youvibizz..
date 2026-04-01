@@ -156,26 +156,35 @@ code {
   }
 }
 
+/* ── Center the app as a 390px mobile-width website ── */
 #app {
   width: 100%;
   min-height: 100vh;
   margin: 0;
   display: flex;
   flex-direction: column;
-  background: transparent; /* Allow body's dark presentation background to show */
+  background: transparent;
 }
 
 .app-container {
   width: 100%;
-  max-width: 480px; /* Standard mobile width */
+  max-width: 480px;
   margin: 0 auto;
   min-height: 100vh;
-  background: var(--navy, #fff); /* default to navy if --navy is present from mobile-shared, otherwise #fff */
+  background: var(--navy, #fff);
   position: relative;
-  box-shadow: 0 0 50px rgba(0,0,0,0.4); /* Stronger shadow on dark background */
+  box-shadow: 0 0 50px rgba(0,0,0,0.4);
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+}
+
+/* On real mobile: full-screen */
+@media (max-width: 480px) {
+  .app-container {
+    width: 100%;
+    box-shadow: none;
+  }
 }
 
 /* Ensure individual components fill the container */

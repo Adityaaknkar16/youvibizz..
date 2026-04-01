@@ -49,34 +49,33 @@ import { computed } from 'vue'
 
 const navLinks = computed(() => {
   const role = localStorage.getItem('yb_role') || localStorage.getItem('role') || 'manufacturer'
-  
-  const base = {
-    home: `/${role}/dashboard`,
-    explore: '/listing',
-    post: `/${role}/requirements`,
-    jobs: `/${role}/jobs`,
-    account: `/${role}/profile`
-  }
 
-  // Overrides to match routes in generated-routes.js
   if (role === 'distributor') {
-    base.home = '/distributor/dashboard'
-    base.post = '/pages/adityavuetask/distributor-requirements'
-    base.jobs = '/distributor-jobs' // Matches router/index.js line 35
-    base.account = '/distributor_detail' // Matches router/index.js line 29
-  } else if (role === 'manufacturer') {
-    base.home = '/manufacturer/dashboard'
-    base.post = '/pages/vuetask/manufacturer-requirements'
-    base.jobs = '/pages/task/manufacturer-jobs'
-    base.account = '/pages/task/manufacturer-detail'
+    return {
+      home:    '/distributor/dashboard',
+      explore: '/listing',
+      post:    '/pages/adityavuetask/distributor-requirements',
+      jobs:    '/distributor-jobs',
+      account: '/pages/adityavuetask/distributor-profile',
+    }
   } else if (role === 'retailer') {
-    base.home = '/retailer/dashboard'
-    base.post = '/pages/tanaya/retailer-requirements'
-    base.jobs = '/pages/tanaya/retailer-jobs'
-    base.account = '/pages/tanaya/retailer-detail'
+    return {
+      home:    '/retailer/dashboard',
+      explore: '/listing',
+      post:    '/pages/tanaya/retailer-requirements',
+      jobs:    '/pages/tanaya/retailer-jobs',
+      account: '/pages/tanaya/retailer-detail',
+    }
+  } else {
+    // manufacturer (default)
+    return {
+      home:    '/manufacturer/dashboard',
+      explore: '/listing',
+      post:    '/pages/task/manufacturer-jobs',
+      jobs:    '/pages/task/manufacturer-jobs',
+      account: '/pages/task/manufacturer-detail',
+    }
   }
-
-  return base
 })
 </script>
 

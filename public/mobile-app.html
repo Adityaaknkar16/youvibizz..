@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile App Mockup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f1923 0%, #1a2535 50%, #0f2027 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 0 90px; /* room for fixed nav below */
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(ellipse at 30% 20%, rgba(99,102,241,0.12) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 80%, rgba(16,185,129,0.08) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Phone Frame ──────────────────── */
+    #app {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .scene-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 16px;
+    }
+
+    .phone-shell {
+      width: 375px;
+      height: 812px;
+      background: #ffffff;
+      border-radius: 50px;
+      box-shadow:
+        0 0 0 2px #2c2c2e,
+        0 0 0 6px #1c1c1e,
+        0 0 0 8px #3a3a3c,
+        0 50px 100px rgba(0,0,0,0.6),
+        0 20px 40px rgba(0,0,0,0.4);
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    /* Notch */
+    .phone-notch {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 34px;
+      background: #1c1c1e;
+      border-radius: 0 0 24px 24px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .notch-camera {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: #2c2c2e;
+      border: 2px solid #3a3a3c;
+    }
+    .notch-speaker {
+      width: 60px; height: 5px;
+      border-radius: 3px;
+      background: #2c2c2e;
+    }
+
+    /* Side buttons */
+    .phone-shell::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 120px;
+      width: 4px;
+      height: 80px;
+      background: #2c2c2e;
+      border-radius: 4px 0 0 4px;
+      box-shadow: 0 50px 0 #2c2c2e;
+    }
+    .phone-shell::after {
+      content: '';
+      position: absolute;
+      right: -10px;
+      top: 180px;
+      width: 4px;
+      height: 100px;
+      background: #2c2c2e;
+      border-radius: 0 4px 4px 0;
+    }
+
+    /* ── Status Bar ─────────────────── */
+    .status-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      background: transparent;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 0 24px 6px;
+      z-index: 50;
+    }
+
+    .status-time {
+      font-size: 15px;
+      font-weight: 700;
+      color: #111;
+      padding-top: 12px;
+    }
+
+    .status-icons {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding-top: 12px;
+    }
+
+    .status-icons svg {
+      width: 16px;
+      height: 12px;
+      fill: #111;
+    }
+
+    .battery {
+      width: 24px; height: 12px;
+      border: 2px solid #111;
+      border-radius: 3px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 2px;
+    }
+    .battery::after {
+      content: '';
+      position: absolute;
+      right: -5px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3px; height: 6px;
+      background: #111;
+      border-radius: 0 2px 2px 0;
+    }
+    .battery-fill {
+      width: 75%;
+      height: 100%;
+      background: #111;
+      border-radius: 1px;
+    }
+
+    /* ── Screen Content ─────────────── */
+    .screen {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background: #f5f7fa;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .screen::-webkit-scrollbar { display: none; }
+
+    /* ── Fade Transition ─────────────── */
+    .fade-enter-active, .fade-leave-active {
+      transition: opacity 0.22s ease, transform 0.22s ease;
+    }
+    .fade-enter-from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    .fade-leave-to {
+      opacity: 0;
+      transform: translateY(-12px);
+    }
+
+    /* ── Bottom Navigation ────────────── */
+    .bottom-nav {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 375px;
+      height: 62px;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 22px;
+      box-shadow:
+        0 8px 32px rgba(0,0,0,0.25),
+        0 2px 8px rgba(0,0,0,0.15),
+        inset 0 1px 0 rgba(255,255,255,0.8);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0 12px;
+      z-index: 1000;
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      cursor: pointer;
+      padding: 8px 16px;
+      border-radius: 14px;
+      transition: all 0.2s ease;
+      min-width: 64px;
+      position: relative;
+    }
+
+    .nav-item:active { transform: scale(0.92); }
+
+    .nav-item .nav-icon { transition: transform 0.2s ease; }
+    .nav-item.active .nav-icon { transform: scale(1.15); }
+
+    .nav-item svg {
+      width: 22px;
+      height: 22px;
+      transition: all 0.2s ease;
+    }
+
+    .nav-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      color: #94a3b8;
+      transition: color 0.2s ease;
+    }
+
+    .nav-item.active .nav-label { color: #6366f1; }
+
+    .nav-indicator {
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: #6366f1;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .nav-item.active .nav-indicator { opacity: 1; }
+
+    /* ── Page Common ──────────────────── */
+    .page { min-height: 100%; }
+
+    /* ── HOME PAGE ──────────────────── */
+    .home-hero {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 60%, #a855f7 100%);
+      padding: 28px 20px 40px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .home-hero::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+    }
+    .home-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30px; left: -30px;
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .greeting { font-size: 13px; font-weight: 600; opacity: 0.8; margin-bottom: 4px; }
+    .hero-name { font-size: 26px; font-weight: 800; margin-bottom: 6px; }
+    .hero-sub { font-size: 13px; opacity: 0.75; margin-bottom: 20px; }
+
+    .search-bar-home {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.2);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-radius: 14px;
+      padding: 12px 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .search-bar-home input {
+      background: none;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-size: 14px;
+      flex: 1;
+      font-family: 'Inter', sans-serif;
+    }
+    .search-bar-home input::placeholder { color: rgba(255,255,255,0.6); }
+    .search-bar-home svg { width: 18px; height: 18px; color: rgba(255,255,255,0.8); flex-shrink: 0; }
+
+    .section { padding: 24px 20px; }
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .section-title { font-size: 16px; font-weight: 800; color: #1e293b; }
+    .see-all { font-size: 12px; font-weight: 700; color: #6366f1; }
+
+    .category-row {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      margin-bottom: 24px;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .category-row::-webkit-scrollbar { display: none; }
+
+    .cat-chip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 15px;
+      border-radius: 12px;
+      background: #fff;
+      border: 1.5px solid #e2e8f0;
+      font-size: 12px;
+      font-weight: 700;
+      color: #475569;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.15s;
+      flex-shrink: 0;
+    }
+    .cat-chip.active, .cat-chip:hover {
+      background: #6366f1;
+      border-color: #6366f1;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(99,102,241,0.35);
+    }
+
+    .feature-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: box-shadow 0.2s;
+    }
+    .feature-card:active { box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+
+    .card-icon {
+      width: 54px; height: 54px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+    .card-body { flex: 1; }
+    .card-title { font-size: 14px; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
+    .card-desc { font-size: 12px; color: #64748b; line-height: 1.5; }
+    .card-badge { font-size: 10px; font-weight: 700; color: #fff; background: #10b981; padding: 3px 8px; border-radius: 6px; margin-top: 6px; display: inline-block; }
+    .card-arrow { color: #94a3b8; flex-shrink: 0; }
+
+    /* ── EXPLORE PAGE ──────────────────── */
+    .hero-banner {
+      background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+      padding: 28px 20px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-banner h2 { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
+    .hero-banner p { font-size: 13px; opacity: 0.8; }
+    .hero-banner::after {
+      content: '✦';
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 64px;
+      opacity: 0.12;
+    }
+
+    .explore-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .explore-card {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .explore-card:active { transform: scale(0.97); box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+
+    .explore-img {
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+    }
+    .explore-info { padding: 12px; }
+    .explore-name { font-size: 13px; font-weight: 700; color: #1e293b; margin-bottom: 3px; }
+    .explore-meta { font-size: 11px; color: #94a3b8; }
+    .explore-price { font-size: 14px; font-weight: 800; color: #6366f1; margin-top: 6px; }
+
+    /* ── SEARCH PAGE ──────────────────── */
+    .search-header {
+      background: #fff;
+      padding: 20px 20px 16px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .search-header h2 { font-size: 22px; font-weight: 800; color: #1e293b; margin-bottom: 14px; }
+    .search-input-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #f1f5f9;
+      border-radius: 14px;
+      padding: 12px 16px;
+      transition: background 0.2s;
+    }
+    .search-input-wrap:focus-within {
+      background: #ede9fe;
+      box-shadow: 0 0 0 2px #6366f1;
+    }
+    .search-input-wrap svg { width: 18px; height: 18px; color: #94a3b8; flex-shrink: 0; }
+    .search-input-wrap input {
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      color: #1e293b;
+      flex: 1;
+      font-family: 'Inter', sans-serif;
+    }
+    .search-input-wrap input::placeholder { color: #94a3b8; }
+
+    .trending-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 7px 13px;
+      border-radius: 20px;
+      background: #f1f5f9;
+      font-size: 12px;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.15s;
+      margin: 4px;
+    }
+    .trending-tag:hover, .trending-tag:active {
+      background: #ede9fe;
+      color: #6366f1;
+    }
+
+    .result-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 20px;
+      background: #fff;
+      border-bottom: 1px solid #f8fafc;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .result-item:active { background: #f8fafc; }
+    .result-ico {
+      width: 46px; height: 46px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .result-name { font-size: 14px; font-weight: 600; color: #1e293b; }
+    .result-sub { font-size: 12px; color: #94a3b8; margin-top: 2px; }
+
+    /* ── PROFILE PAGE ──────────────────── */
+    .profile-hero {
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      padding: 36px 20px 60px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+    .avatar {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 800;
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(99,102,241,0.5);
+    }
+    .profile-name { font-size: 20px; font-weight: 800; margin-bottom: 4px; }
+    .profile-email { font-size: 13px; opacity: 0.65; }
+
+    .profile-stats {
+      display: flex;
+      background: #fff;
+      border-radius: 20px;
+      margin: -30px 20px 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+    .pstat {
+      flex: 1;
+      padding: 16px 10px;
+      text-align: center;
+      border-right: 1px solid #f1f5f9;
+    }
+    .pstat:last-child { border-right: none; }
+    .pstat-val { font-size: 18px; font-weight: 800; color: #1e293b; }
+    .pstat-lbl { font-size: 10px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+
+    .settings-group {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      margin-bottom: 14px;
+    }
+    .settings-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      border-bottom: 1px solid #f8fafc;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .settings-item:last-child { border-bottom: none; }
+    .settings-item:active { background: #f8fafc; }
+    .si-icon {
+      width: 38px; height: 38px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .si-label { font-size: 14px; font-weight: 600; color: #1e293b; flex: 1; }
+    .si-value { font-size: 12px; color: #94a3b8; margin-right: 6px; }
+    .si-arrow { color: #cbd5e1; flex-shrink: 0; }
+
+    .btn-logout {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #ef4444, #f97316);
+      border: none;
+      border-radius: 16px;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-logout:active { opacity: 0.85; transform: scale(0.98); }
+
+    /* ── Utilities ─────────────────── */
+    .mt-8 { margin-top: 8px; }
+    .mt-12 { margin-top: 12px; }
+    .mt-16 { margin-top: 16px; }
+
+    .tags-wrap { display: flex; flex-wrap: wrap; padding: 16px 20px 8px; }
+
+    .chip-active { background: #6366f1 !important; color: #fff !important; }
+  </style>
+</head>
+<body>
+<div id="app">
+  <div class="scene-label">iPhone 14 Pro · 375 × 812</div>
+
+  <!-- ── Phone Shell ── -->
+  <div class="phone-shell">
+    <!-- Notch -->
+    <div class="phone-notch">
+      <div class="notch-camera"></div>
+      <div class="notch-speaker"></div>
+      <div class="notch-camera"></div>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span class="status-time">{{ currentTime }}</span>
+      <div class="status-icons">
+        <!-- Signal -->
+        <svg viewBox="0 0 17 12" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="8" width="3" height="4" rx="1"/>
+          <rect x="4.5" y="5" width="3" height="7" rx="1"/>
+          <rect x="9" y="2" width="3" height="10" rx="1"/>
+          <rect x="13.5" y="0" width="3" height="12" rx="1" opacity="0.3"/>
+        </svg>
+        <!-- WiFi -->
+        <svg viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 10.5l.866.5-.866.5-.866-.5L8 10.5z" fill="#1e293b"/>
+          <path d="M5.4 8.1a3.6 3.6 0 015.2 0" stroke="#1e293b" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+          <path d="M2.8 5.5a7.2 7.2 0 0110.4 0" stroke="#1e293b" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+          <path d="M0 3a11 11 0 0116 0" stroke="#1e293b" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+        </svg>
+        <!-- Battery -->
+        <div class="battery"><div class="battery-fill"></div></div>
+      </div>
+    </div>
+
+    <!-- Scrollable Content -->
+    <div class="screen" ref="screen">
+      <transition name="fade" mode="out-in">
+
+        <!-- ── HOME ── -->
+        <div class="page" v-if="activePage === 'home'" key="home">
+          <div class="home-hero">
+            <div class="greeting">Good morning 👋</div>
+            <div class="hero-name">Alex Johnson</div>
+            <div class="hero-sub">What are you looking for today?</div>
+            <div class="search-bar-home">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <input type="text" placeholder="Search anything..." />
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="section-header">
+              <span class="section-title">Categories</span>
+              <span class="see-all">See all →</span>
+            </div>
+            <div class="category-row">
+              <div class="cat-chip active">🔥 All</div>
+              <div class="cat-chip">💻 Tech</div>
+              <div class="cat-chip">🎨 Design</div>
+              <div class="cat-chip">📚 Books</div>
+              <div class="cat-chip">🎵 Music</div>
+            </div>
+
+            <div class="section-header">
+              <span class="section-title">Featured</span>
+              <span class="see-all">View all →</span>
+            </div>
+
+            <div class="feature-card">
+              <div class="card-icon" style="background:#ede9fe;">🎯</div>
+              <div class="card-body">
+                <div class="card-title">Daily Goals Tracker</div>
+                <div class="card-desc">Stay productive, track your wins every single day.</div>
+                <div class="card-badge">New</div>
+              </div>
+              <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><path d="M9 18 15 12 9 6"/></svg>
+            </div>
+
+            <div class="feature-card">
+              <div class="card-icon" style="background:#dcfce7;">🌿</div>
+              <div class="card-body">
+                <div class="card-title">Wellness Journey</div>
+                <div class="card-desc">Mindfulness exercises, sleep tracking and more.</div>
+                <div class="card-badge" style="background:#0ea5e9;">Popular</div>
+              </div>
+              <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><path d="M9 18 15 12 9 6"/></svg>
+            </div>
+
+            <div class="feature-card">
+              <div class="card-icon" style="background:#fef9c3;">⚡</div>
+              <div class="card-body">
+                <div class="card-title">Productivity Kit</div>
+                <div class="card-desc">Templates, timers and focus modes bundled together.</div>
+              </div>
+              <svg class="card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><path d="M9 18 15 12 9 6"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── EXPLORE ── -->
+        <div class="page" v-else-if="activePage === 'explore'" key="explore">
+          <div class="hero-banner">
+            <h2>Explore Items</h2>
+            <p>Discover curated picks just for you</p>
+          </div>
+
+          <div class="section">
+            <div class="section-header">
+              <span class="section-title">Trending Now</span>
+              <span class="see-all">Filter ▾</span>
+            </div>
+            <div class="explore-grid">
+              <div class="explore-card" v-for="item in exploreItems" :key="item.id">
+                <div class="explore-img" :style="{ background: item.bg }">{{ item.emoji }}</div>
+                <div class="explore-info">
+                  <div class="explore-name">{{ item.name }}</div>
+                  <div class="explore-meta">{{ item.category }}</div>
+                  <div class="explore-price">{{ item.price }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── SEARCH ── -->
+        <div class="page" v-else-if="activePage === 'search'" key="search">
+          <div class="search-header">
+            <h2>Search</h2>
+            <div class="search-input-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <input type="text" v-model="searchQuery" placeholder="Type to search…" @input="onSearch" autofocus />
+            </div>
+          </div>
+
+          <div v-if="!searchQuery">
+            <div class="section" style="padding-bottom: 8px;">
+              <div class="section-title" style="margin-bottom: 12px;">🔥 Trending</div>
+            </div>
+            <div class="tags-wrap">
+              <span class="trending-tag" v-for="t in trending" :key="t" @click="searchQuery = t; onSearch()">{{ t }}</span>
+            </div>
+
+            <div class="section" style="padding-top: 16px;">
+              <div class="section-header">
+                <span class="section-title">Recent</span>
+                <span class="see-all" style="color: #ef4444;">Clear</span>
+              </div>
+              <div class="result-item" v-for="r in recent" :key="r.name">
+                <div class="result-ico" :style="{ background: r.bg }">{{ r.emoji }}</div>
+                <div>
+                  <div class="result-name">{{ r.name }}</div>
+                  <div class="result-sub">{{ r.sub }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div v-else>
+            <div style="padding: 16px 20px 8px; font-size: 13px; color: #94a3b8; font-weight: 600;">
+              {{ searchResults.length }} results for "{{ searchQuery }}"
+            </div>
+            <div class="result-item" v-for="r in searchResults" :key="r.name">
+              <div class="result-ico" :style="{ background: r.bg }">{{ r.emoji }}</div>
+              <div>
+                <div class="result-name">{{ r.name }}</div>
+                <div class="result-sub">{{ r.sub }}</div>
+              </div>
+            </div>
+            <div v-if="searchResults.length === 0" style="text-align: center; padding: 50px 20px; color: #94a3b8;">
+              <div style="font-size: 48px; margin-bottom: 12px;">🔍</div>
+              <div style="font-weight: 700; color: #1e293b; margin-bottom: 6px;">No results found</div>
+              <div style="font-size: 13px;">Try a different keyword</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── PROFILE ── -->
+        <div class="page" v-else-if="activePage === 'profile'" key="profile">
+          <div class="profile-hero">
+            <div class="avatar">A</div>
+            <div class="profile-name">Alex Johnson</div>
+            <div class="profile-email">alex.johnson@example.com</div>
+          </div>
+
+          <div class="profile-stats">
+            <div class="pstat"><div class="pstat-val">48</div><div class="pstat-lbl">Items</div></div>
+            <div class="pstat"><div class="pstat-val">12</div><div class="pstat-lbl">Orders</div></div>
+            <div class="pstat"><div class="pstat-val">4.9★</div><div class="pstat-lbl">Rating</div></div>
+          </div>
+
+          <div class="section">
+            <div class="section-title" style="margin-bottom: 14px;">Account</div>
+            <div class="settings-group">
+              <div class="settings-item">
+                <div class="si-icon" style="background:#ede9fe;">👤</div>
+                <div class="si-label">Edit Profile</div>
+                <svg class="si-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><path d="M9 18 15 12 9 6"/></svg>
+              </div>
+              <div class="settings-item">
+                <div class="si-icon" style="background:#dcfce7;">🔔</div>
+                <div class="si-label">Notifications</div>
+                <span class="si-value">On</span>
+                <svg class="si-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><path d="M9 18 15 12 9 6"/></svg>
+              </div>
+              <div class="settings-item">
+                <div class="si-icon" style="background:#fef9c3;">🔒</div>
+                <div class="si-label">Privacy & Security</div>
+                <svg class="si-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><path d="M9 18 15 12 9 6"/></svg>
+              </div>
+            </div>
+
+            <div class="section-title" style="margin-bottom: 14px;">Preferences</div>
+            <div class="settings-group">
+              <div class="settings-item">
+                <div class="si-icon" style="background:#e0f2fe;">🌙</div>
+                <div class="si-label">Dark Mode</div>
+                <span class="si-value">Off</span>
+                <svg class="si-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><path d="M9 18 15 12 9 6"/></svg>
+              </div>
+              <div class="settings-item">
+                <div class="si-icon" style="background:#fee2e2;">🌐</div>
+                <div class="si-label">Language</div>
+                <span class="si-value">English</span>
+                <svg class="si-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><path d="M9 18 15 12 9 6"/></svg>
+              </div>
+            </div>
+
+            <button class="btn-logout" @click="onLogout">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+              Sign Out
+            </button>
+          </div>
+        </div>
+
+      </transition>
+    </div>
+  </div>
+
+  <!-- ── Bottom Navigation (OUTSIDE phone) ── -->
+  <nav class="bottom-nav">
+    <div
+      class="nav-item"
+      :class="{ active: activePage === 'home' }"
+      @click="changePage('home')"
+    >
+      <div class="nav-indicator"></div>
+      <div class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" :fill="activePage === 'home' ? '#6366f1' : 'none'" :stroke="activePage === 'home' ? '#6366f1' : '#94a3b8'"/>
+          <polyline points="9 22 9 12 15 12 15 22" :stroke="activePage === 'home' ? '#6366f1' : '#94a3b8'"/>
+        </svg>
+      </div>
+      <div class="nav-label">Home</div>
+    </div>
+
+    <div
+      class="nav-item"
+      :class="{ active: activePage === 'explore' }"
+      @click="changePage('explore')"
+    >
+      <div class="nav-indicator"></div>
+      <div class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2">
+          <circle cx="12" cy="12" r="10" :stroke="activePage === 'explore' ? '#6366f1' : '#94a3b8'"
+            :fill="activePage === 'explore' ? '#ede9fe' : 'none'"/>
+          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"
+            :fill="activePage === 'explore' ? '#6366f1' : '#94a3b8'" stroke="none"/>
+        </svg>
+      </div>
+      <div class="nav-label">Explore</div>
+    </div>
+
+    <div
+      class="nav-item"
+      :class="{ active: activePage === 'search' }"
+      @click="changePage('search')"
+    >
+      <div class="nav-indicator"></div>
+      <div class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2">
+          <circle cx="11" cy="11" r="8" :stroke="activePage === 'search' ? '#6366f1' : '#94a3b8'"/>
+          <path d="m21 21-4.35-4.35" :stroke="activePage === 'search' ? '#6366f1' : '#94a3b8'"/>
+        </svg>
+      </div>
+      <div class="nav-label">Search</div>
+    </div>
+
+    <div
+      class="nav-item"
+      :class="{ active: activePage === 'profile' }"
+      @click="changePage('profile')"
+    >
+      <div class="nav-indicator"></div>
+      <div class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+            :stroke="activePage === 'profile' ? '#6366f1' : '#94a3b8'"
+            :fill="activePage === 'profile' ? '#ede9fe' : 'none'"/>
+          <circle cx="12" cy="7" r="4"
+            :stroke="activePage === 'profile' ? '#6366f1' : '#94a3b8'"
+            :fill="activePage === 'profile' ? '#6366f1' : 'none'"/>
+        </svg>
+      </div>
+      <div class="nav-label">Profile</div>
+    </div>
+  </nav>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+const { createApp, ref, computed, onMounted, onBeforeUnmount } = Vue
+
+createApp({
+  setup() {
+    const screen = ref(null)
+    const activePage = ref('home')
+    const currentTime = ref('')
+    const searchQuery = ref('')
+    const searchResults = ref([])
+    let timer = null
+
+    const trending = ['🔥 Viral', '💡 Productivity', '🎮 Gaming', '🍕 Food', '✈️ Travel', '🎨 Art']
+
+    const recent = [
+      { name: 'Design Templates', sub: 'Visited 2 hours ago', emoji: '🎨', bg: '#fce7f3' },
+      { name: 'JavaScript Pro', sub: 'Visited yesterday', emoji: '💻', bg: '#dbeafe' },
+      { name: 'Fitness Bundle', sub: 'Visited 3 days ago', emoji: '💪', bg: '#dcfce7' },
+    ]
+
+    const allItems = [
+      { name: 'Design Templates', sub: 'Creative assets', emoji: '🎨', bg: '#fce7f3' },
+      { name: 'JavaScript Pro', sub: 'Web development', emoji: '💻', bg: '#dbeafe' },
+      { name: 'Fitness Bundle', sub: 'Health & wellness', emoji: '💪', bg: '#dcfce7' },
+      { name: 'Music Producer', sub: 'Audio tools', emoji: '🎵', bg: '#fef9c3' },
+      { name: 'Travel Guide', sub: 'Explore the world', emoji: '✈️', bg: '#e0f2fe' },
+      { name: 'Cooking Master', sub: 'Recipes & tips', emoji: '🍳', bg: '#fce7f3' },
+    ]
+
+    const exploreItems = [
+      { id: 1, name: 'UI Kit Pro', category: 'Design', price: '$29', emoji: '🎨', bg: '#fce7f3' },
+      { id: 2, name: 'JS Masterclass', category: 'Coding', price: '$49', emoji: '💻', bg: '#dbeafe' },
+      { id: 3, name: 'Fitness App', category: 'Health', price: '$9/mo', emoji: '💪', bg: '#dcfce7' },
+      { id: 4, name: 'Music Studio', category: 'Audio', price: '$19', emoji: '🎵', bg: '#fef9c3' },
+      { id: 5, name: 'Travel Pack', category: 'Lifestyle', price: 'Free', emoji: '✈️', bg: '#e0f2fe' },
+      { id: 6, name: 'Chef Course', category: 'Food', price: '$39', emoji: '🍳', bg: '#fce7f3' },
+    ]
+
+    const updateTime = () => {
+      const now = new Date()
+      const h = now.getHours().toString().padStart(2, '0')
+      const m = now.getMinutes().toString().padStart(2, '0')
+      currentTime.value = `${h}:${m}`
+    }
+
+    const changePage = (page) => {
+      activePage.value = page
+      searchQuery.value = ''
+      searchResults.value = []
+      if (screen.value) {
+        screen.value.scrollTop = 0
+      }
+    }
+
+    const onSearch = () => {
+      if (!searchQuery.value.trim()) {
+        searchResults.value = []
+        return
+      }
+      const q = searchQuery.value.toLowerCase()
+      searchResults.value = allItems.filter(i =>
+        i.name.toLowerCase().includes(q) || i.sub.toLowerCase().includes(q)
+      )
+    }
+
+    const onLogout = () => {
+      if (confirm('Are you sure you want to sign out?')) {
+        alert('Signed out!')
+      }
+    }
+
+    onMounted(() => {
+      updateTime()
+      timer = setInterval(updateTime, 60000)
+    })
+
+    onBeforeUnmount(() => {
+      clearInterval(timer)
+    })
+
+    return {
+      screen,
+      activePage,
+      currentTime,
+      searchQuery,
+      searchResults,
+      trending,
+      recent,
+      exploreItems,
+      changePage,
+      onSearch,
+      onLogout,
+    }
+  }
+}).mount('#app')
+</script>
+</body>
+</html>

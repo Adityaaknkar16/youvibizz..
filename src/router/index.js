@@ -37,8 +37,31 @@ const routes = [
   { path: '/distributor-products', name: 'distributor-products', component: () => import('../imported/adityavuetask/src/components/DistributorProducts.vue') },
 
   // Role-based Views
-  { path: '/retailer/dashboard', name: 'retailer-dashboard', component: () => import('../views/RetailerDashboard.vue') },
+  { path: '/retailer/dashboard',    name: 'retailer-dashboard',    component: () => import('../views/RetailerDashboard.vue') },
   { path: '/manufacturer/dashboard', name: 'manufacturer-dashboard', component: () => import('../views/ManufacturerDashboard.vue') },
+
+  // Distributor profile & sub-pages (short URLs)
+  { path: '/distributor/profile',       redirect: '/pages/adityavuetask/distributor-profile' },
+  { path: '/distributor/profile-edit',  redirect: '/pages/adityavuetask/distributor-profile-edit' },
+  { path: '/distributor/requirements',  redirect: '/pages/adityavuetask/distributor-requirements' },
+  { path: '/distributor/settings',      redirect: '/pages/adityavuetask/distributor-settings' },
+  { path: '/distributor/transactions',  redirect: '/pages/adityavuetask/distributor-transactions' },
+  { path: '/distributor/enquiries',     redirect: '/pages/adityavuetask/distributor-enquiries' },
+
+  // Manufacturer profile & sub-pages (short URLs)
+  { path: '/manufacturer/profile',      redirect: '/pages/task/manufacturer-detail' },
+  { path: '/manufacturer/profile/edit', redirect: '/pages/task/manufacturer-edit' },
+  { path: '/manufacturer/jobs',         redirect: '/pages/task/manufacturer-jobs' },
+  { path: '/manufacturer/certificates', redirect: '/pages/task/manufacturer-certificates' },
+  { path: '/manufacturer/gallery',      redirect: '/manufacturer-gallery' },
+  { path: '/manufacturer/enquiries',    redirect: '/pages/task/enquiry-view' },
+
+  // Retailer profile & sub-pages (short URLs)
+  { path: '/retailer/profile',          redirect: '/pages/tanaya/retailer-detail' },
+  { path: '/retailer/jobs',             redirect: '/pages/tanaya/retailer-jobs' },
+  { path: '/retailer/requirements',     redirect: '/pages/tanaya/retailer-requirements' },
+  { path: '/retailer/enquiries',        redirect: '/pages/tanaya/retailer-enquiries' },
+  { path: '/retailer/transactions',     redirect: '/pages/tanaya/retailer-transactions' },
 
   { path: '/listing', redirect: '/pages/task/listing' },
   { path: '/careers', redirect: '/pages/purva/careers' },

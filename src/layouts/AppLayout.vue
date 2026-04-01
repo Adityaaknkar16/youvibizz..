@@ -15,14 +15,12 @@ import BottomNav from '@/components/BottomNav.vue'
 const route = useRoute()
 
 const showBottomNav = computed(() => {
-  // Hide bottom nav on login and register pages if they are not dashboard-like
   const hideOn = ['/', '/register', '/login']
   return !hideOn.includes(route.path)
 })
 </script>
 
 <style scoped>
-/* The app div is the scrollable content area. Bottom nav is fixed via global CSS. */
 .app {
   flex: 1;
   display: flex;
